@@ -61,5 +61,5 @@ RUN apk upgrade --update \
         /var/cache/apk/*
 
 ADD entrypoint.sh /entrypoint.sh
-
+RUN chmod u+x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
