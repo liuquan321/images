@@ -7,9 +7,9 @@ SS_NETWORK_COFNIG="-u --reuse-port --fast-open --no-delay"
 SS_OBFS_CONFIG="--plugin-opts obfs=tls "
 SS_CONFIG_TOTAL="${SS_BASE_CONFIG} ${SS_NETWORK_COFNIG} ${SS_OBFS_CONFIG}"
 DOCKER_OPTS="-it -d --restart=always --network=host --log-driver json-file --log-opt max-size=100m --log-opt max-file=3 "
-IMAGE_NAME=""
+IMAGE_NAME="luquan/myss"
 
-if  ! docker info >/dev/null;then
+if  ! docker info &>/dev/null;then
 	yum install docker -y
 	systemctl enable docker
 	systemctl start docker
