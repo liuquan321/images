@@ -18,7 +18,7 @@ if  ! docker info &>/dev/null;then
         systemctl stop firewalld
         systemctl disable firewalld
         yum install iptables-services -y
-        systemctl enable iptables
+        systemctl disable iptables
         systemctl stop iptables
         setenforce 0;sed -i 's/^SELINUX=.*$/SELINUX=disabled/'  /etc/selinux/config
 fi
